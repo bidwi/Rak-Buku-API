@@ -3,8 +3,8 @@ const routes = require('./routes-rak-buku');
 
 const init = async () => {
   const server = Hapi.server({
-    port: 9000,
-    host: 'localhost',
+    port: process.env.PORT || 9000,
+    host: process.env.HOST || '0.0.0.0',
     routes: {
       cors: {
         origin: ['*'],
@@ -15,7 +15,7 @@ const init = async () => {
   server.route(routes);
 
   await server.start();
-  console.log(`Server udah jalan, coba aja cek ${server.info.uri}/books`);
+  console.log(`Server running on ${server.info.uri}`);
 };
 
 init();
