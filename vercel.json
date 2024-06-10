@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "./src/server-rak-buku.js",
+      "src": "src/server-rak-buku.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "./src/server-rak-buku.js"
+      "dest": "src/server-rak-buku.js"
     }
   ]
 }
